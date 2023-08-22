@@ -16,9 +16,9 @@ const Task = ({ taskObj, onComplete }) => {
   return (
     <div className="task">
       <h3>{taskObj.title}</h3>
-      <div>
+      <div className={beforeAfter > 3 ? "asd" : "asdss"}>
         son teslim: {result}
-        {beforeAfter > 1 ? " önce" : " sonra"}
+        {beforeAfter > 0 ? " önce" : " sonra"}
       </div>
       <p>{taskObj.description}</p>
       <div>
