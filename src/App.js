@@ -4,28 +4,27 @@ import Task from "./Task";
 import TaskHookForm from "./TaskHookForm";
 import PeopleForm from "./PeopleForm";
 import { initialTasks, initialTeam } from "./data";
-import { toast } from 'react-toastify';
-
 
 function App() {
   const [tasks, setTasks] = useState(initialTasks);
   const [team, setTeam] = useState(initialTeam);
 
   function handleTaskSubmit(yeniTask) {
-    setTasks([yeniTask, ...tasks])
+    setTasks([yeniTask, ...tasks]);
   }
 
   function handlePeopleSubmit(yeniKisi) {
-    setTeam([...team, yeniKisi])
+    setTeam([...team, yeniKisi]);
   }
 
   function handleComplete(id) {
-    const tasksCopy = [...tasks];
-    const ilgiliTask = tasksCopy.filter(t => t.id === id)[0];
-    ilgiliTask.status = "yapıldı";
-    setTasks(tasksCopy);
-
-    toast.success(`Tebrikler! "${ilgiliTask.title}" tamamlandı!`);
+    const newTaskArray = tasks.map((task) => {
+      if (task.id === id) {
+        task.status = "yapıldı";
+      }
+      return console.log("tamamlama fonksiyonunu buraya yazın");
+    });
+    handleTaskSubmit(newTaskArray);
   }
 
   return (
@@ -33,6 +32,7 @@ function App() {
       <div className="formColumn">
         <div className="form-container">
           <h2>Yeni Task</h2>
+          {/* <TaskForm kisiler={team} submitFn={handleTaskSubmit} /> */}
           <TaskHookForm kisiler={team} submitFn={handleTaskSubmit} />
         </div>
 
@@ -63,7 +63,6 @@ function App() {
           </div>
         </div>
       </div>
-
     </div>
   );
 }

@@ -1,7 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const PeopleForm = ({ kisiler, submitFn }) => {
   const [isim, setIsim] = useState("");
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    if (kisiler.includes(isim)) {
+      setError("Bu isim daha önce eklenmiş");
+    } else {
+      setError(null);
+    }
+  }, [isim, kisiler]);
 
   function handleIsimChange(e) {
     setIsim(e.target.value);
@@ -12,7 +23,7 @@ const PeopleForm = ({ kisiler, submitFn }) => {
     submitFn(isim);
     setIsim("");
   }
-
+  const notify = () => toast("Güzel isimmiş kıskandım!");
 
   return (
     <form className="taskForm" onSubmit={handleSubmit}>
@@ -28,17 +39,19 @@ const PeopleForm = ({ kisiler, submitFn }) => {
           onChange={handleIsimChange}
           value={isim}
         />
-        {kisiler.includes(isim) && <p className="input-error">Bu isim daha önce eklenmiş</p>}
+        <p className="input-error">{error}</p>
       </div>
 
       <div className="form-line">
         <button
+          onClick={notify}
           className="submit-button"
           type="submit"
-          disabled={isim.length === 0 || kisiler.includes(isim)}
+          disabled={isim.length === 0 || error}
         >
           Ekle
         </button>
+        <ToastContainer />
       </div>
     </form>
   );

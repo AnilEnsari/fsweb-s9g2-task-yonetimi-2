@@ -29,9 +29,11 @@
 
 .column-title {
   font-size: 1.5rem;
-  padding-left: 0.75rem;
+  padding-left: .75rem;
 }
 /* LAYOUT */
+
+
 
 /* TASK */
 .task {
@@ -49,7 +51,7 @@
 }
 
 .task p {
-  padding: 0.5rem 0 0.75rem;
+  padding: .5rem 0 .75rem;
   font-size: 14px;
   color: #444;
 }
@@ -74,25 +76,9 @@
   margin-bottom: 6px;
   border-radius: 30px;
 }
-
-.deadline {
-  font-size: 12px;
-  padding-top: 4px;
-}
-
-.deadline span {
-  padding: 3px 8px;
-  border-radius: 2px;
-  display: inline-block;
-}
-
-.normal {
-  background-color: #ffd9d4;
-}
-.urgent {
-  background-color: #d4d7ff;
-}
 /* TASK */
+
+
 
 /* FORM */
 .form-container {
@@ -102,7 +88,7 @@
 
 .form-container h2 {
   font-size: 1.5rem;
-  padding-bottom: 0.5rem;
+  padding-bottom: .5rem;
 }
 
 .form-line {
@@ -125,8 +111,7 @@
   padding: 6px 8px 6px 4px;
   border-radius: 3px;
   border: 1px solid #ccc;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-right: .5rem;
   display: inline-flex;
   align-items: center;
   cursor: pointer;
@@ -148,16 +133,16 @@
   display: block;
   width: 100%;
   border: 0;
-  padding: 0.75rem 1rem;
+  padding: .75rem 1rem;
   background-color: #fecc91;
-  color: rgba(0, 0, 0, 0.6);
+  color: rgba(0,0,0,.6);
   cursor: pointer;
   border-radius: 3px;
   box-shadow: 0 4px 5px 0 rgb(0 0 0 / 5%);
 }
 
 .submit-button:disabled {
-  opacity: 0.5;
+  opacity: .5;
   cursor: not-allowed;
   box-shadow: none;
 }
