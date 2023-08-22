@@ -39,6 +39,6 @@ export const initialTasks = [
     people: ["ömer", "emre"],
     deadline: "",
     status: "yapılacak",
-    date: "2023-08-26",
+    date: "2023-08-31",
   },
 ];
