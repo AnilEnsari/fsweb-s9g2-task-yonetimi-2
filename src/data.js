@@ -9,6 +9,7 @@ export const initialTasks = [
     people: ["ömer", "emre"],
     deadline: "",
     status: "yapıldı",
+    date: "2023-08-19",
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const initialTasks = [
     people: ["ömer"],
     deadline: "",
     status: "yapılacak",
+    date: "2023-08-23",
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ export const initialTasks = [
     people: ["emre"],
     deadline: "",
     status: "yapılacak",
+    date: "2023-08-24",
   },
   {
     id: 4,
@@ -36,5 +39,6 @@ export const initialTasks = [
     people: ["ömer", "emre"],
     deadline: "",
     status: "yapılacak",
+    date: "2023-08-26",
   },
 ];

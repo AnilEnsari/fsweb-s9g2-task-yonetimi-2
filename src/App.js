@@ -3,6 +3,7 @@ import "./app.css";
 import Task from "./Task";
 import TaskHookForm from "./TaskHookForm";
 import PeopleForm from "./PeopleForm";
+
 import { initialTasks, initialTeam } from "./data";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
     });
     handleTaskSubmit(newTaskArray);
   }
+  console.log(tasks);
 
   return (
     <div className="app">

@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
-
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -12,7 +11,7 @@ export default function TaskHookForm({ kisiler, submitFn }) {
     formState: { errors, isValid },
   } = useForm({
     mode: "onBlur",
-    defaultValues: { title: "", description: "", people: [] },
+    defaultValues: { title: "", description: "", people: [], date: "" },
   });
   const onSubmit = (data) => {
     submitFn({ ...data, id: nanoid(5), status: "yapılacak" });
@@ -84,6 +83,25 @@ export default function TaskHookForm({ kisiler, submitFn }) {
         {errors.people && (
           <p className="input-error">{errors.people.message}</p>
         )}
+      </div>
+      <div className="form-line">
+        <label className="input-label" htmlFor="date">
+          Tarih
+        </label>
+        <input
+          className="input-text"
+          id="date"
+          name="date"
+          type="date"
+          {...register("date", {
+            required: "Tarih alanı boş bırakılamaz !",
+            minLength: {
+              value: 6,
+              message: "Tarih alanı en az 6 karakter içerlemlidir.",
+            },
+          })}
+        />
+        {errors.date && <p className="input-error">{errors.date.message}</p>}
       </div>
 
       <div className="form-line">
